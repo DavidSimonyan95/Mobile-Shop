@@ -1,18 +1,49 @@
-.navMenu{
-    a{
-        text-decoration: none;
-        color: #666666;
-        font-weight: 500;
-        padding: 0 10px;
-        font-size: 14px;
-        transition: 0.2s ease-in;
-        &:hover{
-            color: #FB016F;
-        }
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .navMenu{
+        display: flex;
+        gap:35px;
+
+    }
+    .navToggle{
+        cursor: pointer;
+        display: none;   
     }
 }
-@media only screen and (max-width: 600px) {
-    .navMenu {
-      display: none;
+@media only screen and (max-width: 850px) {
+    .nav{
+        .navToggle{
+            display: block;
+        }
+        .navMenu{
+            position: fixed;
+            top:0;
+            right: 0;
+            width: 50%;
+            height: 65vh;
+            gap:0;
+            background:#E5E5E5;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: 0.3s ease-in;
+            padding: 20px;
+          
+            span{
+                line-height: 2.5;
+                color: #EA2C7B;
+            }
+        
+        }
     }
-  }
+
+}
+
+.nav{
+    .active{
+        transform: translateX(0);
+    }
+}

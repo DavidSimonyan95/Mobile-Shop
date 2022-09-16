@@ -5,10 +5,8 @@ import s from "../Header/Header.module.scss"
 function Header(){
     return(
         <div className={s.headerSection}>   
-        
             <HeaderTop/>
             <HeaderBottom/>
-        
         </div>
     )
 }

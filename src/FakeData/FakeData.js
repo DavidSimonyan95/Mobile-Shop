@@ -80,6 +80,132 @@ const FakeData = [
         cashless : ['Անկանխիկ`',207000],
         cash: ['Կանխիկ`',185000],
         category : 'Watches'
+    },
+    {
+        id:10,
+        name: 'Samsung Galaxy S22 ',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/i/m/img_0_77_3416_0_1.jpg',
+        price: 589000,
+        cashless : ['Անկանխիկ`',647000],
+        cash: ['Կանխիկ`',589000],
+        category : 'Mobile'
+    },
+    {
+        id: 11,
+        name: 'Sony WH-1000XM5',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/6/1/61_btxzpfdl._ac_sl1500_.jpg',
+        price: 259300,
+        cashless : ['Անկանխիկ`',288000,],
+        cash: ['Կանխիկ`',259300],
+        category : 'Accessories'
+    },
+    {
+        id:12,
+        name: 'Oppo Reno 5',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/i/m/img_0_77_2929_8_1.jpg',
+        price: 163500,
+        cashless : ['Անկանխիկ`',181000],
+        cash: ['Կանխիկ`',163500],
+        category : 'Mobile'
+    },
+    {
+        id:13,
+        name: 'Samsung Galaxy Tab S8',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/977ea4a48f7b863f635e2edcfdbc3115/s/a/samsung-tab-s8-ultra-5g-sm-x906b-_12_256_-graphite-1.jpg',
+        price: 585000,
+        cashless : ['Անկանխիկ`',645000],
+        cash: ['Կանխիկ`',585000],
+        category : 'Tablets'
+    },
+    {
+        id:14,
+        name: 'Apple iPhone SE 3',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/n/e/new-apple-iphone-se-3rd-generation-12gb-red-1647957367-3.png',
+        price: 209000,
+        cashless : ['Անկանխիկ`',229000],
+        cash: ['Կանխիկ`',209000],
+        category : 'Mobile'
+    },
+    {
+        id:15,
+        name: 'Samsung Galaxy Watch 5',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/977ea4a48f7b863f635e2edcfdbc3115/u/a/ua-galaxy-watch5-40mm-sm-r900nzdasek-533191181.jpg',
+        price: 180000,
+        cashless : ['Անկանխիկ`',196000],
+        cash: ['Կանխիկ`',180000],
+        category : 'Watches'
+    },
+    {
+        id:16,
+        name: 'Apple Watch S7 ',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/977ea4a48f7b863f635e2edcfdbc3115/a/p/apple_watch_series_7_gps_41mm_green_aluminum_clover_sport_band_pdp_image_position-1__ww-ru_2.jpg',
+        price: 190000,
+        cashless : ['Անկանխիկ`',207000],
+        cash: ['Կանխիկ`',190000],
+        category : 'Watches'
+    },
+    {
+        id:17,
+        name: 'Baseus Car',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/2/-/2-82-1.jpg',
+        price: 10000,
+        cashless : ['Անկանխիկ`',11000],
+        cash: ['Կանխիկ`',10000],
+        category : 'Accessories'
+    },
+    {
+        id:18,
+        name: 'Apple IPhone 12',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/7/7/7796ed68c0c12a0c9f4d6706267ce313.jpg',
+        price: 300000,
+        cashless : ['Անկանխիկ`',330000],
+        cash: ['Կանխիկ`',300000],
+        category : 'Mobile'
+    },
+    {
+        id:19,
+        name: 'Apple IPad Pro 11',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/6/0/60a55d7bc5e63-600-600.jpg',
+        price: 420000,
+        cashless : ['Անկանխիկ`',435000],
+        cash: ['Կանխիկ`',420000],
+        category : 'Tablets'
+    },
+    {
+        id:20,
+        name: 'Xiaomi 12 Lite',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/p/m/pms_1656928498.99827624_2.jpg',
+        price: 185000,
+        cashless : ['Անկանխիկ`',199000],
+        cash: ['Կանխիկ`',185000],
+        category : 'Mobile'
+    },
+    {
+        id:21,
+        name: 'Apple Pencil 2',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/p/e/pen2.jpg',
+        price: 65000,
+        cashless : ['Անկանխիկ`',71000],
+        cash: ['Կանխիկ`',65000],
+        category : 'Accessories'
+    },
+    {
+        id:22,
+        name: 'Rapoo Keyboard X1',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/d/s/dsc_2083a.jpg',
+        price: 17000,
+        cashless : ['Անկանխիկ`',18800],
+        cash: ['Կանխիկ`',17000],
+        category : 'Accessories'
+    },
+    {
+        id: 23,
+        name: 'Xiaomi Mi Smart ',
+        image : 'https://yerevanmobile.am/media/catalog/product/cache/57f083443baa4ba0b92f2984c599babe/f/r/front_45__black_result.jpg',
+        price: 39500,
+        cashless : ['Անկանխիկ`',49000],
+        cash: ['Կանխիկ`',39500],
+        category : 'Watches'
     }
   
     

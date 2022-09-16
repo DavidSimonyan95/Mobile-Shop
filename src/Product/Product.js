@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
-import FakeData from "./FakeData/FakeData";
-import Header from "./Header/Header";
-import Main from "./Main/Main";
-import s from './About.module.scss'
-function About({pathname}){
+import Button from "../Custom/Button";
+import FakeData from "../FakeData/FakeData";
+import Header from "../Header/Header";
+import s from './Product.module.scss';
+
+
+function Product({pathname}){
 
  const [id,setId]= useState(null);
  const [currentItem,setCurrentItem] = useState();
@@ -12,17 +13,13 @@ function About({pathname}){
  useEffect(()=>{
     let arr = pathname.split("");
     arr.shift();
-    setId(+arr.join());
+    setId(+arr.join(''));
     setCurrentItem(...FakeData.filter(item => item.id === id))
  },[pathname,id])
 
-    return (currentItem && <div>
+ return(currentItem && <div>
             <Header/>
-            
-            <Link to='/'>
-                <button className={s.toHome}>Գլխավոր</button>             
-            </Link>
-
+            <Button/>
             <div className={s.containerMain}>
                 <div className={s.leftInfo}>
                     <img src={currentItem.image}></img> 
@@ -34,11 +31,8 @@ function About({pathname}){
                     <h5>{currentItem.cash}֏ </h5>
                 </div>
             </div>
-
-
-
         </div>
     )
 }
 
-export default About
+export default Product

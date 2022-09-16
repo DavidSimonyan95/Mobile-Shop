@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import About from '../About';
 import data from '../FakeData/FakeData';
 import Header from '../Header/Header';
 import s from '../Main/Main.module.scss';
@@ -11,23 +10,17 @@ function Main(){
     const[data1,setData1] = useState(data);
   
     const foo = (catItem)=>{
-        const result = data1.filter((curDate)=>{
+        const result = data.filter((curDate)=>{
             return curDate.category === catItem
         })
-        
-       setData1(result)
-       
+       setData1(result)  
     }
+
    const dataSearch = data1.filter(item =>{
-        return Object.keys(item)
-            .some(key => item[key]
-            .toString()
-            .toLowerCase()
-            .includes(filter.toString()
-            .toLowerCase()
-            )  
-        )
-    });
+        return item.name.toLowerCase().includes(filter.toLowerCase())
+   });
+   
+    
     return(
         <>
          <Header/>
@@ -50,15 +43,12 @@ function Main(){
                          }}
                     />
                 </div>
-
             </div>
-            
                 <div className={s.pro}>
                     
                     {
                     dataSearch.map(product =>{
                             return (
-                              
                                 <Link to={`/${product.id}`} key={product.id}>
                                     <div key={product.id} className={s.pro2}>
                                         <img src={product.image}></img>
@@ -67,11 +57,9 @@ function Main(){
                                 </Link>
                             )
                         })
-                    }
-                    
+                    }     
                 </div>
                 <Footer/>
-           
         </>
     )
 }
