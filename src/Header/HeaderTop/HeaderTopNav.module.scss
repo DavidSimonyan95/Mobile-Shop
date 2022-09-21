@@ -13,8 +13,16 @@
         cursor: pointer;
         display: none;   
     }
+    span{
+        padding: 15px;
+        color: rgb(71, 67, 67);
+        &:hover{
+            color: #EA2C7B;
+        }
+    }
 }
-@media only screen and (max-width: 850px) {
+
+@media only screen and (max-width: 700px) {
     .nav{
         .navToggle{
             display: block;
@@ -24,7 +32,7 @@
             top:0;
             right: 0;
             width: 50%;
-            height: 65vh;
+            height: 60vh;
             gap:0;
             background:#E5E5E5;
             flex-direction: column;
@@ -45,5 +53,7 @@
 .nav{
     .active{
         transform: translateX(0);
+       
+        
     }
 }

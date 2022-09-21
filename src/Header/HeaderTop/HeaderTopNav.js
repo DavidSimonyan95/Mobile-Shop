@@ -5,7 +5,8 @@ import s from '../HeaderTop/HeaderTopNav.module.scss';
 import {FaBars,FaMixer} from 'react-icons/fa';
 
 
-function HeaderTopNav(){
+
+function HeaderTopNav({t}){
     
    const [active,setActive] = useState(s.navMenu);
    const [icon,setIcon] = useState(true);
@@ -25,18 +26,18 @@ window.onscroll = () =>{
         <nav className={s.nav}>
             <div className={active}>
                     <Link to='/abouteus'>
-                        <span>ՄԵՐ ՄԱՍԻՆ</span>
+                        <span>{t('aboutUs')}</span>
                     </Link>
               
                     <Link to='/contact'>
-                        <span>ԿԱՊ</span>
+                        <span>{t('contactUs')}</span>
                     </Link>
                
                     <Link to='/services'>
-                        <span>ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ</span>
+                        <span>{t('service')}</span>
                     </Link>
                     <Link to='/credit'>
-                        <span>ԱՊԱՌԻԿԻ ՊԱՅՄԱՆՆԵՐ</span>
+                        <span>{t('creditconditions')}</span>
                     </Link>
                
             </div>

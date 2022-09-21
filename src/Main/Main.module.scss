@@ -9,7 +9,6 @@
 
     .filter{
         display: flex;
-  
         div{
             color: white;
             width: 100%;
@@ -31,13 +30,10 @@
             border-radius: 5px;
             border: none;
         }
-        
-
     }
-   
 }
 
-.pro{
+.products{
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
@@ -51,7 +47,7 @@
         transform: rotate(10deg);
     }
    }
-   .pro2{
+   .product{
     margin: 20px;
     border-radius: 8px;
     text-align: center;
@@ -64,6 +60,45 @@
         transform: scale(1.05);
         box-shadow: -3px -1px 2px 3px #e5186d84;
     }
-
    }
 }
+
+@media screen and (max-width: 750px){
+    .searchFilter{
+        width: 100%;
+        display: flex;
+       flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color:#E5E5E5;
+        border-top: 3px solid #E5186E;
+        overflow: hidden;
+    
+    
+        .filter{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+
+      
+            div{
+                color: rgb(0, 0, 0);
+                background: none;
+                padding: 10px 20px;
+                border-right: 1px solid #4d4b4c;
+                cursor: pointer;
+                &:hover{
+                    background-color: #E5186E;
+                }
+            }
+    
+        }
+        .search{
+            input{
+              margin: 15px;
+              box-shadow: 5px 10px 3px #8888;
+            }
+        }
+    }
+
+}   
