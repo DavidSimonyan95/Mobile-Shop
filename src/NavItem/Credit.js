@@ -6,7 +6,7 @@ function Credit(){
     return(
         
         <div className={s.infoCredit}>
-            <Header/>
+         
             <Button/>
             <h1>ԱՊԱՌԻԿԻ ՁԵՎԱԿԵՐՊՄԱՆ ՀԱՄԱՐ <br/>ԱՆՀՐԱԺԵՇՏ ՊԱՅՄԱՆՆԵՐ</h1>
             <p> Mobile Shop խանութ-սրահում ապառիկ տարբերակով գնումներ
@@ -24,7 +24,7 @@ function Credit(){
             <p>ՀԱՅԷԿՈՆՈՄԲԱՆԿ ԲԲԸ</p>
             <p>ՅՈՒՆԻԲԱՆԿ ՓԲԸ</p>
             <p>ԱՄԵՐԻԱ ԲԱՆԿ ՓԲԸ</p>
-            <Footer/>
+          
         </div>
     )
 }

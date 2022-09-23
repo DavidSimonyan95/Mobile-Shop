@@ -18,7 +18,7 @@ function Product({pathname}){
  },[pathname,id])
 
  return(currentItem && <div>
-            <Header/>
+           
             <Button/>
             <div className={s.containerMain}>
                 <div className={s.leftInfo}>

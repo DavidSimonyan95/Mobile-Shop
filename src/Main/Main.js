@@ -1,54 +1,60 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../FakeData/FakeData';
-import Header from '../Header/Header';
+import fakeData from '../FakeData/FakeData';
 import s from '../Main/Main.module.scss';
-import Footer from '../Footer/Footer';
 import { useTranslation } from  '../context/languageContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchValue } from "../redux/slices/searchSlice";
+import {FaSearch} from 'react-icons/fa';
+
+
 function Main(){
+    
     const { t } = useTranslation();
+    const dispatch = useDispatch();
+    const searchValue = useSelector(state => state.searchValue);
+    const [ filteredData, setFilteredData ] = useState(fakeData);
+    const inputRef = useRef();
 
-    const [filter,setFilter] = useState('');
-    const[data1,setData1] = useState(data);
-  
+    useEffect(() => {
+        if(searchValue) {
+          setFilteredData(fakeData.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()))) 
+        }
+    }, [searchValue])
+
     const filterData = (catItem)=>{
-        const result = data.filter((curDate)=>{
-            return curDate.category === catItem
-        })
-       setData1(result)  
+        setFilteredData(fakeData.filter((filDate)=> filDate.category === catItem)) 
     }
-    
-   const dataSearch = data1.filter(item =>{
-        return item.name.toLowerCase().includes(filter.toLowerCase())
-   });
 
-    
     return(
         <>
-         <Header/>
             <div className={s.searchFilter}>
                 <div className={s.filter}>
-                    <div onClick={()=> setData1(data)}>{t('all')}</div>
-                    <div onClick={()=> filterData('Mobile')}>{t('phones')}</div>
+                    <div onClick={()=>setFilteredData(fakeData)}>{t('all')}</div>
+                    <div onClick={()=>filterData('Mobile')}>{t('phones')}</div>
                     <div onClick={()=>filterData('Accessories')}>{t('accessories')}</div>
                     <div onClick={()=> filterData('Tablets')}>{t('tablets')}</div>
                     <div onClick={()=> filterData('Watches')}>{t('watches')}</div>
                 </div>
                 <div className={s.search}>
-                    <input 
-                         type='text'
-                         value={filter}
+                    <form onSubmit={(e)=>{
+                        e.preventDefault()
+                        dispatch(setSearchValue(inputRef.current.value = ''))
+                    }}>
+                         <input 
+                         type= 'text'
+                         ref={inputRef}
                          placeholder={t("search")}
-                         onChange = {(e)=>{
-                             setFilter(e.target.value)
-                         }}
-                    />
+                        />
+                     <button onClick={() => dispatch(setSearchValue(inputRef.current.value))}><FaSearch/></button>
+                    </form>
+                   
                 </div>
             </div>
                 <div className={s.products}>
                     
                     {
-                    dataSearch.map(product =>{
+                       filteredData.length > 0 ? filteredData.map(product =>{
                             return (
                                 <Link to={`/${product.id}`} key={product.id}>
                                     <div key={product.id} className={s.product}>
@@ -57,10 +63,13 @@ function Main(){
                                     </div>
                                 </Link>
                             )
-                        })
-                    }     
+                        }): (
+                            <div className={s.empty}>Ese Epmty</div>  
+                        ) 
+                      
+                    }  
+                    
                 </div>
-                <Footer/>
         </>
     )
 }

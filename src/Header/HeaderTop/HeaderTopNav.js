@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import s from '../HeaderTop/HeaderTopNav.module.scss';
 import {FaBars,FaMixer} from 'react-icons/fa';
 
-
-
 function HeaderTopNav({t}){
     
    const [active,setActive] = useState(s.navMenu);
@@ -20,26 +18,14 @@ window.onscroll = () =>{
     setActive(s.navMenu)
 
 };
- 
 
     return (
         <nav className={s.nav}>
             <div className={active}>
-                    <Link to='/abouteus'>
-                        <span>{t('aboutUs')}</span>
-                    </Link>
-              
-                    <Link to='/contact'>
-                        <span>{t('contactUs')}</span>
-                    </Link>
-               
-                    <Link to='/services'>
-                        <span>{t('service')}</span>
-                    </Link>
-                    <Link to='/credit'>
-                        <span>{t('creditconditions')}</span>
-                    </Link>
-               
+                    <Link to='/abouteus'>{t('aboutUs')}</Link>
+                    <Link to='/contact'>{t('contactUs')}</Link>
+                    <Link to='/services'>{t('service')}</Link>
+                    <Link to='/credit'>{t('creditconditions')}</Link>
             </div>
             <div onClick={navToggle} className={s.navToggle}>
             {

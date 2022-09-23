@@ -207,10 +207,5 @@ const FakeData = [
         cash: ['Կանխիկ`',39500],
         category : 'Watches'
     }
-  
-    
-  
-
-
 ]
 export default FakeData;

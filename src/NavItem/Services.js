@@ -5,7 +5,7 @@ import s from './Services.module.scss'
 function Services(){
     return(
     <div className={s.services}>
-        <Header/>
+        
         <Button/>
         <h1>ՍԵՐՎԻՍ ՊԱՏՎԵՐՈՎ</h1>
         <h2>ԻՆՉ ԵՆՔ ՄԵՆՔ ԱՌԱՋԱՐԿՈՒՄ </h2>
@@ -38,8 +38,6 @@ function Services(){
             <img src="https://yerevanmobile.am/media/wysiwyg/service003.jpg"></img>
            
         </div>
-        <Footer/>
-
     </div>
       
     )

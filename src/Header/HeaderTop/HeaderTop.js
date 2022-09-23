@@ -2,7 +2,6 @@ import HeaderTopLanguages from "./HeaderTopLanguages";
 import HeaderTopNav from "./HeaderTopNav";
 import s from '../HeaderTop/HeaderTop.module.scss';
 
-
 function HeaderTop({t}){
 
     return(

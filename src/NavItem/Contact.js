@@ -6,7 +6,7 @@ import Button from '../Custom/Button'
 function Contact(){
     return (
          <div className={s.contact}>
-            <Header/>
+       
            <Button/>
            <h1>Կապ</h1>
            <div className={s.contactInfo}>
@@ -59,7 +59,7 @@ function Contact(){
                     <button>Ուղարկել</button>
                 </div>
            </div>
-           <Footer/>
+          
  
         </div>
     )

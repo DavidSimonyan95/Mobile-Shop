@@ -5,7 +5,6 @@ import Button from '../Custom/Button'
 function AbouteUs(){
     return(
       <div className={s.contentAbouteus}>
-        <Header/>
           <Button/>
             <h2>ԻՆՉ ԵՆՔ ՄԵՆՔ ԱՌԱՋԱՐԿՈՒՄ</h2>
             <img className={s.topimg} src='https://d2xe71nj4xrmst.cloudfront.net/media/business/university-blvd-w-veirs-mill-rd-2-4440-2-UP9Mo5OaeppZlRJT_NM_io5LOD_SXfMGaIqjn0DqmGY.ace9477772ed.jpg'/>
@@ -34,7 +33,6 @@ function AbouteUs(){
               </div>
             </div>
 
-        <Footer/>
       </div>
     )
 }
