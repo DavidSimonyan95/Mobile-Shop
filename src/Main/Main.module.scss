@@ -1,44 +1,44 @@
 .searchFilter{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: #474747;
     border-top: 3px solid #E5186E;
     overflow: hidden;
-
-    .filter{
-        display: flex;
-
+    .mySwiper{
+    
         div{
-            color: white;
-            width: 100%;
-            background: #201f1f;
-            padding: 10px 20px;
-            border-right: 1px solid #4d4b4c;
-            cursor: pointer;
-            &:hover{
-                background-color: #E5186E;
-            }
+             color: white;
+             background: #201f1f;
+             padding: 3px 2px;
+             border-right: 1px solid #4d4b4c;
+             cursor: pointer;
+             &:hover{
+                 background-color: #E5186E;
+             }
         }
-
     }
+
+   
     .search{
-        padding: 0 20px;
-        margin:0 10px;
-        flex-wrap: nowrap;
+        padding: 0 35px;
+        margin: 0 25px;
+        flex-wrap: wrap;
         position: relative;
+        min-width: 190px;
         input{
             width:100%;
-            height: 5vh;
+            height: 35px;
             border-radius: 7px 0px 0px 7px;
             border: none;
+            padding: 0 6px;
         }
         button{
             position: absolute;
             text-align: center;
-            width:17%;
-            height: 5vh;
+            width:15%;
+            height: 35px;
             border-radius: 0px 7px 7px 0px;
             border: none;
             background-color:white;
@@ -81,53 +81,53 @@
    }
 }
 
-@media screen and (max-width: 790px){
-    // .searchFilter{
-    //     width: 100%;
-    //     display: flex;
-    //    flex-wrap: wrap;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     background-color:#E5E5E5;
-    //     border-top: 3px solid #E5186E;
-    //     overflow: hidden;
+// @media screen and (max-width: 790px){
+//     // .searchFilter{
+//     //     width: 100%;
+//     //     display: flex;
+//     //    flex-wrap: wrap;
+//     //     justify-content: space-between;
+//     //     align-items: center;
+//     //     background-color:#E5E5E5;
+//     //     border-top: 3px solid #E5186E;
+//     //     overflow: hidden;
     
     
-    //     .filter{
-    //         display: flex;
-    //         width: 100%;
-    //         flex-wrap: wrap;
+//     //     .filter{
+//     //         display: flex;
+//     //         width: 100%;
+//     //         flex-wrap: wrap;
 
       
-    //         div{
-    //             color: rgb(0, 0, 0);
-    //             background: none;
-    //             padding: 10px 20px;
-    //             border-right: 1px solid #4d4b4c;
-    //             cursor: pointer;
-    //             &:hover{
-    //                 background-color: #E5186E;
-    //             }
-    //         }
+//     //         div{
+//     //             color: rgb(0, 0, 0);
+//     //             background: none;
+//     //             padding: 10px 20px;
+//     //             border-right: 1px solid #4d4b4c;
+//     //             cursor: pointer;
+//     //             &:hover{
+//     //                 background-color: #E5186E;
+//     //             }
+//     //         }
     
-    //     }
-    //     .search{
-    //         input{
-    //           margin: 15px;
-    //           box-shadow: 5px 10px 3px #8888;
-    //         }
-    //     }
-    // }
-    .searchFilter{
-        ::-webkit-scrollbar {
-            display: none;
-          }
+//     //     }
+//     //     .search{
+//     //         input{
+//     //           margin: 15px;
+//     //           box-shadow: 5px 10px 3px #8888;
+//     //         }
+//     //     }
+//     // }
+//     .searchFilter{
+//         ::-webkit-scrollbar {
+//             display: none;
+//           }
           
         
-        .filter{
-            overflow-x: scroll;
+//         .filter{
+//             overflow-x: scroll;
             
-        }
-    }
+//         }
+//     }
 
-}   
+// }   
