@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,10 +12,11 @@ import { FaSearch } from "react-icons/fa";
 function Main() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const searchValue = useSelector((state) => state.searchValue);
+  const searchValue = useSelector((state) => state.searchValue.value);
+  const category = useSelector((state) => state.searchValue.category);
   const [filteredData, setFilteredData] = useState(fakeData);
   const inputRef = useRef();
-
+  
   useEffect(() => {
     if (searchValue) {
       setFilteredData(
@@ -26,9 +27,17 @@ function Main() {
     }
   }, [searchValue]);
 
-  const filterData = (catItem) => {
-    setFilteredData(fakeData.filter((filDate) => filDate.category === catItem));
-  };
+  useEffect(() => {
+    if (category) {
+      setFilteredData(
+        fakeData.filter(
+          (item) => item.category.toLowerCase() === category.toLowerCase()
+        )
+      );
+    } else {
+      setFilteredData(fakeData);
+    }
+  }, [category]);
 
   return (
     <>
@@ -56,19 +65,69 @@ function Main() {
           className={s.mySwiper}
         >
           <SwiperSlide>
-            <div onClick={() => setFilteredData(fakeData)}>{t("all")}</div>
+            <div
+              onClick={() =>
+                dispatch(
+                  setSearchValue({
+                    category: "",
+                  })
+                )
+              }
+            >
+              {t("all")}
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div onClick={() => filterData("Mobile")}>{t("phones")}</div>
+            <div
+              onClick={() =>
+                dispatch(
+                  setSearchValue({
+                    category: "mobile",
+                  })
+                )
+              }
+            >
+              {t("phones")}
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div onClick={() => filterData("Accessories")}>{t("accessories")}</div>
+            <div
+              onClick={() =>
+                dispatch(
+                  setSearchValue({
+                    category: "accessories",
+                  })
+                )
+              }
+            >
+              {t("accessories")}
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div onClick={() => filterData("Tablets")}>{t("tablets")}</div>
+            <div
+              onClick={() =>
+                dispatch(
+                  setSearchValue({
+                    category: "tablets",
+                  })
+                )
+              }
+            >
+              {t("tablets")}
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div onClick={() => filterData("Watches")}>{t("watches")}</div>
+            <div
+              onClick={() =>
+                dispatch(
+                  setSearchValue({
+                    category: "watches",
+                  })
+                )
+              }
+            >
+              {t("watches")}
+            </div>
           </SwiperSlide>
         </Swiper>
 
@@ -81,9 +140,15 @@ function Main() {
           >
             <input type="text" ref={inputRef} placeholder={t("search")} />
             <button
-              onClick={() => dispatch(setSearchValue(inputRef.current.value))}
+              onClick={() =>
+                dispatch(
+                  setSearchValue({
+                    value: inputRef.current.value,
+                  })
+                )
+              }
             >
-            <FaSearch />
+              <FaSearch />
             </button>
           </form>
         </div>
