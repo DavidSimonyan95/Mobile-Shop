@@ -16,29 +16,41 @@ function Main() {
   const category = useSelector((state) => state.searchValue.category);
   const [filteredData, setFilteredData] = useState(fakeData);
   const inputRef = useRef();
-  
-  useEffect(() => {
-    if (searchValue) {
-      setFilteredData(
-        fakeData.filter((item) =>
-          item.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-      );
-    }
-  }, [searchValue]);
 
   useEffect(() => {
-    if (category) {
-      setFilteredData(
-        fakeData.filter(
-          (item) => item.category.toLowerCase() === category.toLowerCase()
-        )
-      );
-    } else {
+    if (category === "all") {
       setFilteredData(fakeData);
+      if (category === "all" && searchValue) {
+        setFilteredData(
+          fakeData.filter((item) =>
+            item.name.toLowerCase().includes(searchValue.toLowerCase())
+          )
+        );
+      }
+    } else {
+      if (category && !searchValue) {
+        setFilteredData(
+          fakeData.filter(
+            (item) => item.category.toLowerCase() === category.toLowerCase()
+          )
+        );
+      } else if (searchValue && category) {
+        setFilteredData(
+          fakeData.filter(
+            (item) =>
+              item.category.toLowerCase() === category.toLowerCase() &&
+              item.name.toLowerCase().includes(searchValue.toLowerCase())
+          )
+        );
+      } else if (!category && searchValue) {
+        setFilteredData(
+          fakeData.filter((item) =>
+            item.name.toLowerCase().includes(searchValue.toLowerCase())
+          )
+        );
+      }
     }
-  }, [category]);
-
+  }, [searchValue, category]);
   return (
     <>
       <div className={s.searchFilter}>
@@ -69,7 +81,7 @@ function Main() {
               onClick={() =>
                 dispatch(
                   setSearchValue({
-                    category: "",
+                    category: "all",
                   })
                 )
               }
@@ -135,7 +147,7 @@ function Main() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              dispatch(setSearchValue((inputRef.current.value = "")));
+              inputRef.current.value = "";
             }}
           >
             <input type="text" ref={inputRef} placeholder={t("search")} />
@@ -144,6 +156,7 @@ function Main() {
                 dispatch(
                   setSearchValue({
                     value: inputRef.current.value,
+                    category,
                   })
                 )
               }
