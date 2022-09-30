@@ -80,6 +80,19 @@
     width: 100%;
     height: 100vh;
    }
+   .cardPlus{
+    color: #4d4b4c;
+
+    font-size: 27px;
+    margin: 15px 0;
+
+    &:hover{
+        transform: scale(1.2);
+        color: #E5186E;
+
+    }
+
+   }
 }
 
 // @media screen and (max-width: 790px){

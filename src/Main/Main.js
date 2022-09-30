@@ -7,13 +7,15 @@ import fakeData from "../FakeData/FakeData";
 import s from "../Main/Main.module.scss";
 import { useTranslation } from "../context/languageContext";
 import { setSearchValue } from "../redux/slices/searchSlice";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch,FaCartPlus } from "react-icons/fa";
+import { setCart } from "../redux/slices/cartSlice";
 
 function Main() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const searchValue = useSelector((state) => state.searchValue.value);
   const category = useSelector((state) => state.searchValue.category);
+  const cart = useSelector((state) => state.cart);
   const [filteredData, setFilteredData] = useState(fakeData);
   const inputRef = useRef();
 
@@ -51,6 +53,8 @@ function Main() {
       }
     }
   }, [searchValue, category]);
+
+ 
   return (
     <>
       <div className={s.searchFilter}>
@@ -174,6 +178,14 @@ function Main() {
                 <div key={product.id} className={s.product}>
                   <img src={product.image} alt={index}></img>
                   <p>{product.name}</p>
+                  <div
+                    onClick={() => {
+                      dispatch(setCart(product));
+                    }}
+                    
+                  >
+                   < FaCartPlus className={s.cardPlus}/>
+                  </div>
                 </div>
               </Link>
             );

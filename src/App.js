@@ -9,6 +9,7 @@ import Services from './NavItem/Services';
 import Credit from './NavItem/Credit'
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import Cart from './Cart/Cart';
 
 function App() { 
 
@@ -18,11 +19,13 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
+          
           <Route path='/' element = {<Main/>}/>
           <Route path='/contact' element = {<Contact/>}/>
           <Route path='/abouteus' element = {<AbouteUs/>}/>
           <Route path='/services' element = {<Services/>}/>
-          <Route path='/credit' element = {<Credit/>}/>
+          <Route path='/credit' element = {<Credit/>}/>  
+            <Route path='/cart' element = {<Cart/>}/>  
           <Route  path = {pathname} element = {<Product pathname = {pathname}/>}/> 
       </Routes>
       <Footer/>

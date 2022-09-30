@@ -4,11 +4,13 @@ import s from "../HeaderTop/HeaderTopNav.module.scss";
 import { FaBars, FaMixer } from "react-icons/fa";
 import { useTranslation } from "../../context/languageContext";
 
+
+
 function HeaderTopNav() {
   const [active, setActive] = useState(s.navMenu);
   const [icon, setIcon] = useState(true);
   const { t } = useTranslation();
-
+  
   const navToggle = () => {
     active === s.navMenu
       ? setActive(`${s.navMenu} ${s.active}`)
